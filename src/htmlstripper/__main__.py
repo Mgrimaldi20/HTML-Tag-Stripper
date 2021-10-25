@@ -21,7 +21,7 @@ AUTHOR:
     Written by Marco Grimaldi
     
 SOURCE:
-    
+    https://github.com/Mgrimaldi20/HTML-Tag-Stripper
 
 '''
 

@@ -11,5 +11,5 @@ A tool that strips HTML tags from a .html file to get the plain text.
         The output will be printed to the terminal and stored in a file called  
         "rawtxt.txt"    
         
-# Author  
+## Author  
     Written by Marco Grimaldi  

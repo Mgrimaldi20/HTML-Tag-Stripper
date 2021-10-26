@@ -2,14 +2,14 @@
 
 A tool that strips HTML tags from a .html file to get the plain text.
 
-OPTIONS:  
-    `-h`    
-        Help. Print this message and exit.    
+## Options  
+    `-h    
+        Help. Print this message and exit.`        
         
     `<filename>`     
         The name of the file in the current directory to strip HTML tags from.  
         The output will be printed to the terminal and stored in a file called  
         "rawtxt.txt"    
         
-AUTHOR:  
+# Author  
     Written by Marco Grimaldi  

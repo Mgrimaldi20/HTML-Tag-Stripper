@@ -1,7 +1,7 @@
 import sys
 import getopt
 
-from . import htmlstripper
+from htmlstripper.htmlstripper import HTMLStripper
 
 
 HELP = '''Python HTML Tag Stripper

@@ -7,7 +7,7 @@ class HTMLStripper(HTMLParser):
         super().__init__()
         self.reset()
         self.strict = False
-        self.convert_charrefs= True
+        self.convert_charrefs = True
         self.text = StringIO()
         
     def handle_data(self, d):
@@ -17,12 +17,12 @@ class HTMLStripper(HTMLParser):
         return self.text.getvalue()
         
     def strip_tags(self, html):
-        feed(html)
+        self.feed(html)
         new_str = ""
         
         removal_list = ['\t']
         for s in removal_list:
-            new_str = get_data().replace(s, '')
+            new_str = self.get_data().replace(s, '')
             
         return new_str
     

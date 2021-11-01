@@ -34,13 +34,18 @@ for opt, arg in opts:
         print("Not a valid option, exiting...")
         exit(0)
 
-html_file = open(sys.argv[1])
-html_txt = html_file.read()
-html_file.close()
+html_txt = ""
+try:
+    html_file = open(sys.argv[1])
+    html_txt = html_file.read()
+    html_file.close()
+except:
+    print("File does not exist")
 
 tag_stripper = HTMLStripper()
 
 raw_txt = tag_stripper.strip_tags(html_txt)
+
 txt_file = open("rawtxt.txt", "w")
 print(raw_txt)
 txt_file.write(raw_txt)  

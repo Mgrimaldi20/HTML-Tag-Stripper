@@ -18,5 +18,11 @@ class HTMLStripper(HTMLParser):
         
     def strip_tags(self, html):
         feed(html)
-        return get_data()
+        new_str = ""
+        
+        removal_list = ['\t']
+        for s in removal_list:
+            new_str = get_data().replace(s, '')
+            
+        return new_str
     

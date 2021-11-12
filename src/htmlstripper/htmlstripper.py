@@ -1,6 +1,7 @@
 from io import StringIO
 from html.parser import HTMLParser
 import sys
+import re
 
 class HTMLStripper(HTMLParser):
     def __init__(self):
@@ -17,6 +18,18 @@ class HTMLStripper(HTMLParser):
         return self.text.getvalue()
         
     def strip_tags(self, html):
+        pattern = r'<[ ]*script.*?\/[ ]*script[ ]*>'
+        html = re.sub(pattern, '', html, flags=(re.IGNORECASE | re.MULTILINE | re.DOTALL))
+
+        pattern = r'<[ ]*style.*?\/[ ]*style[ ]*>' 
+        html = re.sub(pattern, '', html, flags=(re.IGNORECASE | re.MULTILINE | re.DOTALL))
+
+        pattern = r'<[ ]*meta.*?>'
+        html = re.sub(pattern, '', html, flags=(re.IGNORECASE | re.MULTILINE | re.DOTALL))
+
+        pattern = r'<[ ]*!--.*?--[ ]*>'
+        html = re.sub(pattern, '', html, flags=(re.IGNORECASE | re.MULTILINE | re.DOTALL))
+        
         self.feed(html)
         new_str = ""
         
